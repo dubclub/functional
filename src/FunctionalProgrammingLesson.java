@@ -2,6 +2,8 @@ import java.util.function.Function;
 
 public class FunctionalProgrammingLesson {
 
+    static double v3 = 3.0;
+
     public static void main(String[] args) {
 
         /**
@@ -10,6 +12,27 @@ public class FunctionalProgrammingLesson {
          */
 
         Function<Integer, Integer> add = x -> x * x;
+
+        double v1 = 2.0;
+        double v2 = 2.0;
+
+        Operation operation = () -> {
+            return v1 + v2 + v3;
+        };
+
+
+
+        System.out.println(operation.getResult());
+        System.out.println(v1);
+        System.out.println(v2);
+
+        System.out.println(v3);
+
     }
 
+
+}
+
+interface Operation {
+    double getResult();
 }
